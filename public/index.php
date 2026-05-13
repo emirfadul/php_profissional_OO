@@ -1,12 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Php_Profissional O.O.</title>
-</head>
-<body>
-    <h1>Seja Bem vindo</h1>
-    
-</body>
-</html>
+<?php
+
+use app\core\Router;
+// use app\support\RequestType;
+
+require '../vendor/autoload.php';
+
+session_start();
+
+// dd($_SERVER);
+
+// dd(trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)));  
+
+// dd(RequestType::get());
+
+Router::run();
+
