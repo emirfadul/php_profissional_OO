@@ -8,6 +8,7 @@ class Controller
 {
     public function execute(string $router)
     {
+
         // Verifica se a rota contém o separador '@'
         if (!str_contains($router, '@')) {
             throw new Exception('Rota inválida. Formato esperado: Controller@method');   
@@ -32,7 +33,10 @@ class Controller
             throw new Exception("O método {$method} não existe no controller {$controllerNamespace}");
         }
 
+        $params = new ControllerParams();
+        $params = $params->get($router);
+
         // Chama o método do controlador
-        $controller->$method();
+        $controller->$method($params);
     }
 }

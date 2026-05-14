@@ -4,8 +4,8 @@ namespace app\controllers;
 
 class UserControllers 
 {
-    public function index()
+    public function edit($params)
     {
-        dd('User controller index');
+        dd($params);
     }
 }
